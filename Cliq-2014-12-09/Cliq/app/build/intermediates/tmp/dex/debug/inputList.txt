@@ -1,0 +1,4 @@
+C:\Users\Tony\Downloads\Cliq-2014-12-09\Cliq\app\build\intermediates\classes\debug
+C:\Users\Tony\Downloads\Cliq-2014-12-09\Cliq\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-331fea32103fdf21e80af5d42893c03836dc9c04.jar
+C:\Users\Tony\Downloads\Cliq-2014-12-09\Cliq\app\build\intermediates\pre-dexed\debug\classes-a7636202dcc9139c401380f229e94b5e02673a0b.jar
+C:\Users\Tony\Downloads\Cliq-2014-12-09\Cliq\app\build\intermediates\pre-dexed\debug\classes-1f433feeb4f6fb881848d0f34723a4616ef0ce2b.jar
