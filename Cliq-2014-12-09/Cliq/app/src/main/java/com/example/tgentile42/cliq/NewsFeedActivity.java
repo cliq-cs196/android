@@ -5,6 +5,8 @@ package com.example.tgentile42.cliq;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +18,10 @@ import com.example.tgentile42.cliq.JSONParser.JSONParser;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 
@@ -25,13 +30,14 @@ import java.util.HashMap;
     private static String url ="https://cs196-cliq.herokuapp.com:443/api/events";
 
     private static final String name = "name";
-    private static final String lat = "0.0";
-    private static final String lng = "0.0";
-    private static final String date = "date";
+    private static final String lat = "lat";
+    private static final String lng = "lng";
+    private static final String daTE = "dateTime" ;
+    private static final String desc = "description";
     private static final String tags = "tag1";
-    private static final String maxSize = "0";
+    private static final String maxSize = "maxSize";
     private static final String owner = "owner";
-
+    private static final String location = "location";
     ArrayList<HashMap<String,String>> jsonlist = new ArrayList<>();
     ListView listView;
 
@@ -39,8 +45,10 @@ import java.util.HashMap;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_feed);
-        new ProgressTask(NewsFeedActivity.this).execute();
-    }
+            new ProgressTask(NewsFeedActivity.this).execute();
+
+
+        }
         private class ProgressTask extends AsyncTask<String, Void, Boolean> {
 
             private ProgressDialog dialog;
@@ -64,8 +72,8 @@ import java.util.HashMap;
                 }
                 ListAdapter adapter;
                 adapter = new SimpleAdapter(context, jsonlist,R.layout.list_item,
-                        new String[] {name,lat,lng, date,tags,maxSize,owner},
-                        new int[]{R.id.name, R.id.lat,R.id.lng,R.id.date,R.id.tags,R.id.maxSize,R.id.owner}
+                        new String[] {name,lat,lng,desc,daTE,maxSize},
+                        new int[]{R.id.name, R.id.lat,R.id.lng,R.id.date,R.id.description,R.id.maxSize}
                         );
 
                 setListAdapter(adapter);
@@ -80,15 +88,21 @@ import java.util.HashMap;
                          try{
                              JSONObject o = json.getJSONObject(i);
                              String nAME = o.getString(name);
-                             String dATE = o.getString(date);
-
-
-
+                             String desC = o.getString(desc);
+                             JSONObject locations = o.getJSONObject(location);
+                             Long dateDouble = o.getLong(daTE);
+                             Date date1 = new Date(dateDouble * 1000);
+                             String max = "Max Size: " + Integer.toString(o.getInt(maxSize));
+                             String dateString ="Date: " +  date1.toString();
+                             String longitude = locations.getString(lng);
+                             String latitude = locations.getString(lat);
                              HashMap<String,String> map = new HashMap<>();
-
                              map.put(name,nAME);
-                             map.put(date, dATE);
-
+                             map.put(daTE, dateString);
+                             map.put(desc,desC);
+                             map.put(maxSize,max);
+                             map.put(lng,longitude);
+                             map.put(lat,latitude);
                              jsonlist.add(map);
                          }
                          catch (JSONException e){

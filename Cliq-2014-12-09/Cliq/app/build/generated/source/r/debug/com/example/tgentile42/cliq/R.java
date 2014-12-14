@@ -304,7 +304,7 @@ containing a value of this type.
         public static final int stardust=0x7f020032;
     }
     public static final class id {
-        public static final int action_settings=0x7f09002f;
+        public static final int action_settings=0x7f09002d;
         public static final int authButton=0x7f09000c;
         public static final int bottom=0x7f090003;
         public static final int box_count=0x7f090000;
@@ -342,15 +342,13 @@ containing a value of this type.
         public static final int lat=0x7f090028;
         public static final int left=0x7f090007;
         public static final int lng=0x7f090029;
-        public static final int maxSize=0x7f09002d;
+        public static final int maxSize=0x7f09002c;
         public static final int name=0x7f090027;
         public static final int normal=0x7f09000a;
-        public static final int owner=0x7f09002e;
         public static final int picker_subtitle=0x7f09001c;
         public static final int right=0x7f090008;
         public static final int small=0x7f09000b;
         public static final int standard=0x7f090002;
-        public static final int tags=0x7f09002c;
         public static final int top=0x7f090005;
     }
     public static final class layout {

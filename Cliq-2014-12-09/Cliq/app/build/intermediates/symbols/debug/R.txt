@@ -115,7 +115,7 @@ int drawable escheresque 0x7f02002f
 int drawable ic_launcher 0x7f020030
 int drawable shattered 0x7f020031
 int drawable stardust 0x7f020032
-int id action_settings 0x7f09002f
+int id action_settings 0x7f09002d
 int id authButton 0x7f09000c
 int id bottom 0x7f090003
 int id box_count 0x7f090000
@@ -153,15 +153,13 @@ int id large 0x7f090009
 int id lat 0x7f090028
 int id left 0x7f090007
 int id lng 0x7f090029
-int id maxSize 0x7f09002d
+int id maxSize 0x7f09002c
 int id name 0x7f090027
 int id normal 0x7f09000a
-int id owner 0x7f09002e
 int id picker_subtitle 0x7f09001c
 int id right 0x7f090008
 int id small 0x7f09000b
 int id standard 0x7f090002
-int id tags 0x7f09002c
 int id top 0x7f090005
 int layout activity_my 0x7f030000
 int layout activity_news_feed 0x7f030001
